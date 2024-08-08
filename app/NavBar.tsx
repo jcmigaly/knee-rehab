@@ -57,20 +57,10 @@ const NavBar = () => {
             <Link href={""}>All About Tendons!</Link>
           </li>
           <li>
-            <details>
-              <summary>Recovery</summary>
-              <ul className="p-2">
-                <li>
-                  <Link href={""}>Time</Link>
-                </li>
-                <li>
-                  <Link href={""}>Supplementation</Link>
-                </li>
-              </ul>
-            </details>
+            <Link href={""}>Recovery Time</Link>
           </li>
           <li>
-            <Link href={""}>Relevant Research</Link>
+            <Link href={""}>Lifestyle Factors</Link>
           </li>
         </ul>
       </div>
