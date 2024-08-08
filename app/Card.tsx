@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface Props {
   id: string;
   label: string;
   image: string;
+  message: string;
   onSelect: (id: string, isSelected: boolean) => void;
 }
 
-const Card = ({ id, label, image, onSelect }: Props) => {
+const Card = ({ id, label, image, message, onSelect }: Props) => {
   const [selected, setSelected] = useState(false);
 
   const handleClick = () => {
@@ -22,17 +24,25 @@ const Card = ({ id, label, image, onSelect }: Props) => {
 
   return (
     <div
-      className={`card card-compact bg-base-100 shadow-xl transition duration-500 sm:hover:scale-105${
+      className={`card card-compact bg-base-100 shadow-xl transition duration-500 hover:scale-105${
         selected
-          ? "selected sm:scale-110 border-1px border-rose-700 border-solid "
+          ? "selected scale-110 border-1px border-rose-700 border-solid "
           : ""
       }`}
       onClick={handleClick}
     >
-      <figure>{<img src={image} alt="Shoes" />}</figure>
+      {/* <figure>{<img src={image} alt="Shoes" />}</figure> */}
+      <Image
+        className="self-center"
+        src={image}
+        width={180}
+        height={37}
+        alt={label}
+        priority
+      />
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">{label}</h2>
+        <p>{message}</p>
       </div>
     </div>
   );
