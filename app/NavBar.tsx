@@ -28,21 +28,21 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link href={""}>Item 1</Link>
+              <Link href={""}>All About Tendons!</Link>
             </li>
             <li>
-              <Link href={""}>Parent</Link>
+              <Link href={""}>Recovery</Link>
               <ul className="p-2">
                 <li>
-                  <Link href={""}>Submenu 1</Link>
+                  <Link href={""}>Time</Link>
                 </li>
                 <li>
-                  <Link href={""}>Submenu 2</Link>
+                  <Link href={""}>Supplementation</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href={""}>Item 3</Link>
+              <Link href={""}>Relevant Research</Link>
             </li>
           </ul>
         </div>
