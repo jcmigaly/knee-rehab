@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
 import Card from "./Card";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const [SelectedIds, setSelectedIds] = useState<number[]>([]);
+  const router = useRouter();
 
   const handleCardSelection = (id: number, isSelected: boolean) => {
     setSelectedIds((prevIds: number[]) => {
@@ -16,6 +19,10 @@ export default function Home() {
       }
     });
   };
+
+  // const handleSubmit = (event: React.FormEvent) => {
+  //   router.push("/rehab", SelectedIds.join(","));
+  // };
 
   return (
     <>
@@ -31,9 +38,6 @@ export default function Home() {
                   label="Behind Knee"
                   image="/hamstring.svg"
                   message="Distal hamstring tendons, pain with knee flexion."
-                  // onSelect={(id: number, isSelected: boolean) =>
-                  //   console.log(id, isSelected)
-                  // }
                   onSelect={handleCardSelection}
                 />
                 <Card
@@ -41,9 +45,6 @@ export default function Home() {
                   label="Below Knee"
                   image="/patellar.svg"
                   message="Patellar tendon, pain with knee extension."
-                  // onSelect={(id: number, isSelected: boolean) =>
-                  //   console.log(id, isSelected)
-                  // }
                   onSelect={handleCardSelection}
                 />
                 <Card
@@ -51,15 +52,21 @@ export default function Home() {
                   label="Above Knee"
                   image="/quad.svg"
                   message="Quadricep tendon, pain with knee extension."
-                  // onSelect={(id: number, isSelected: boolean) =>
-                  //   console.log(id, isSelected)
-                  // }
                   onSelect={handleCardSelection}
                 />
               </div>
-              <button className="btn btn-primary btn-lg btn-error mt-10 self-center sm:translate-x-2">
+              <Link
+                href={{
+                  pathname: "/rehab",
+                  query: { SelectedIds: SelectedIds.join("") },
+                }}
+                className={`btn btn-primary btn-lg btn-error mt-10 self-center sm:translate-x-2m ${
+                  SelectedIds.length === 0 ? "pointer-events-none" : ""
+                }`}
+                // disabled={SelectedIds.length === 0}
+              >
                 Return To Play!
-              </button>
+              </Link>
             </form>
           </div>
         </div>
