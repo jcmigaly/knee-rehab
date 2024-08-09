@@ -3,23 +3,29 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 interface Props {
-  id: string;
+  id: number;
   label: string;
   image: string;
   message: string;
-  onSelect: (id: string, isSelected: boolean) => void;
+  onSelect: (id: number, isSelected: boolean) => void;
 }
 
 const Card = ({ id, label, image, message, onSelect }: Props) => {
   const [selected, setSelected] = useState(false);
 
+  //   const handleClick = () => {
+  //     setSelected((prevSelected) => {
+  //       const newSelected = !prevSelected;
+  //       console.log(newSelected);
+  //       onSelect(id, newSelected);
+  //       return newSelected;
+  //     });
+  //   };
+
   const handleClick = () => {
-    setSelected((prevSelected) => {
-      const newSelected = !prevSelected;
-      console.log(newSelected);
-      onSelect(id, newSelected);
-      return newSelected;
-    });
+    const newSelected = !selected; // Toggle the selected state
+    setSelected(newSelected); // Update the local state
+    onSelect(id, newSelected); // Notify the parent of the selection change
   };
 
   return (

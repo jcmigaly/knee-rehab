@@ -1,7 +1,22 @@
 "use client";
+import { useState } from "react";
 import Card from "./Card";
 
 export default function Home() {
+  const [SelectedIds, setSelectedIds] = useState<number[]>([]);
+
+  const handleCardSelection = (id: number, isSelected: boolean) => {
+    setSelectedIds((prevIds: number[]) => {
+      if (prevIds.includes(id)) {
+        console.log(prevIds.filter((cardId) => cardId !== id));
+        return prevIds.filter((cardId) => cardId !== id);
+      } else {
+        console.log([...prevIds, id]);
+        return [...prevIds, id];
+      }
+    });
+  };
+
   return (
     <>
       <div className="hero bg-base-200 min-h-screen items-start">
@@ -11,25 +26,34 @@ export default function Home() {
             <p className="py-6">Select any area(s)</p>
             <div className="grid grid-cols-1 gap-y-10 sm:flex max-w-full justify-around gap-10">
               <Card
-                id="1"
+                id={1}
                 label="Behind Knee"
                 image="/hamstring.svg"
                 message="Distal hamstring tendons, pain with knee flexion."
-                onSelect={(id: string, isSelected: boolean) => console.log(id)}
+                // onSelect={(id: number, isSelected: boolean) =>
+                //   console.log(id, isSelected)
+                // }
+                onSelect={handleCardSelection}
               />
               <Card
-                id="2"
+                id={2}
                 label="Below Knee"
                 image="/patellar.svg"
                 message="Patellar tendon, pain with knee extension."
-                onSelect={(id: string, isSelected: boolean) => console.log(id)}
+                // onSelect={(id: number, isSelected: boolean) =>
+                //   console.log(id, isSelected)
+                // }
+                onSelect={handleCardSelection}
               />
               <Card
-                id="3"
+                id={3}
                 label="Above Knee"
                 image="/quad.svg"
                 message="Quadricep tendon, pain with knee extension."
-                onSelect={(id: string, isSelected: boolean) => console.log(id)}
+                // onSelect={(id: number, isSelected: boolean) =>
+                //   console.log(id, isSelected)
+                // }
+                onSelect={handleCardSelection}
               />
             </div>
             <button className="btn btn-primary btn-lg btn-error mt-10 self-center sm:translate-x-2">
