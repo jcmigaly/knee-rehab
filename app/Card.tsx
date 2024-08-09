@@ -30,10 +30,8 @@ const Card = ({ id, label, image, message, onSelect }: Props) => {
 
   return (
     <div
-      className={`card card-compact bg-base-100 shadow-xl transition duration-500 hover:scale-105${
-        selected
-          ? "selected scale-110 border-1px border-rose-700 border-solid "
-          : ""
+      className={`card card-compact bg-base-100 shadow-xl transition duration-500 ${
+        selected ? "selected scale-110" : "hover:scale-105"
       }`}
       onClick={handleClick}
     >
