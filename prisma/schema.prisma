@@ -9,3 +9,47 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id            Int            @id @default(autoincrement())
+  name          String
+  abilityLevel  AbilityLevel   @default(BEGINNER)
+  hamstring     Boolean        @default(false)
+  quad          Boolean        @default(false)
+  patellar      Boolean        @default(false)
+  userExercises UserExercise[]
+}
+
+enum AbilityLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+model BodyPart {
+  id        Int        @id @default(autoincrement())
+  name      String
+  exercises Exercise[]
+}
+
+model Exercise {
+  id            Int            @id @default(autoincrement())
+  name          String
+  description   String?
+  abilityLevel  AbilityLevel
+  bodyPart      BodyPart       @relation(fields: [bodyPartId], references: [id])
+  bodyPartId    Int
+  userExercises UserExercise[]
+}
+
+model UserExercise {
+  userId     Int
+  exerciseId Int
+  completed  Boolean  @default(false)
+  timestamp  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  exercise Exercise @relation(fields: [exerciseId], references: [id])
+
+  @@id([userId, exerciseId])
+}

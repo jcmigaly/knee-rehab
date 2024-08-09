@@ -58,7 +58,7 @@ export default function Home() {
               <Link
                 href={{
                   pathname: "/rehab",
-                  query: { SelectedIds: SelectedIds.join("") },
+                  query: { SelectedIds: SelectedIds.sort().join("") },
                 }}
                 className={`btn btn-primary btn-lg btn-error mt-10 self-center sm:translate-x-2m ${
                   SelectedIds.length === 0 ? "pointer-events-none" : ""
