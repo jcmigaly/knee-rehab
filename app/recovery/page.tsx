@@ -50,12 +50,11 @@ const RecoveryTime = () => {
           <div className="text-center lg:text-left w-1/2">
             <h1 className="text-5xl font-bold">Lifestyle Factors</h1>
             <p className="py-6">
-              Ensure you're also getting 8-10 hours of sleep each night,
-              engaging in light locomotion such as walking for 30 minutes to an
-              hour daily, and maintaining healthy social interactions. Enjoy
-              life! Also make sure your diet consists of 0.8 grams of protein
-              per pound of your bodyweight in addition to healthy carbs, fruits
-              and veggies.
+              Ensure you are getting 8-10 hours of sleep each night, engaging in
+              light locomotion such as walking for 30 minutes to an hour daily,
+              and maintaining healthy social interactions. Enjoy life! Also make
+              sure your diet consists of 0.8 grams of protein per pound of your
+              bodyweight in addition to healthy carbs, fruits and veggies.
             </p>
           </div>
         </div>

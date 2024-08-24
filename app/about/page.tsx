@@ -52,9 +52,9 @@ const AllAboutTendons = () => {
               which you can think of as bundles of spaghetti noodles. These
               fibers are all lined up in the same direction, making tendons
               strong and flexible. However, in compromised tendons, such as
-              those affected by injury or overuse, the "noodles" can become
-              misaligned, leading to a weakened structure and reduced ability to
-              handle stress.
+              those affected by injury or overuse, the &quot;noodles&quot; can
+              become misaligned, leading to a weakened structure and reduced
+              ability to handle stress.
             </p>
           </div>
         </div>

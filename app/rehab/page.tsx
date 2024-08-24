@@ -1,5 +1,6 @@
 import React from "react";
 import prisma from "@/prisma/client";
+import Link from "next/link";
 
 interface Props {
   searchParams: { SelectedIds: string };
@@ -44,7 +45,7 @@ const RehabPage = async ({ searchParams: { SelectedIds } }: Props) => {
           </thead>
           <tbody>
             {exercises.map((part) => (
-              <tr className="hover">
+              <tr key={part.name} className="hover">
                 <td>{part.name}</td>
                 <td>{part.setRepScheme}</td>
                 <td>{part.description}</td>
@@ -70,9 +71,15 @@ const RehabPage = async ({ searchParams: { SelectedIds } }: Props) => {
         <span>
           Do this rehab session 3 times a week, ensuring that you never do a
           session on back-to-back days. For example, a good schedule would be to
-          do this Monday, Wednesday, Friday. Read the "All About Tendon!",
-          "Recovery Time", and "Lifetsyle Factors" pages to fully understand
-          what you are embarking on.
+          do this Monday, Wednesday, Friday. Read the{" "}
+          <Link className="underline" href={"/../about"}>
+            All About Tendons!
+          </Link>{" "}
+          and{" "}
+          <Link className="underline" href={"/../recovery"}>
+            Recovery Time
+          </Link>{" "}
+          pages to fully understand what you are embarking on.
         </span>
       </div>
     </div>
