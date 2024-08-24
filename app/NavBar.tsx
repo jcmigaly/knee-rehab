@@ -1,10 +1,15 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { GiHealing } from "react-icons/gi";
 
 const NavBar = () => {
+  const { status, data: session } = useSession();
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 border-b-4 border-b-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,25 +33,14 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link href={""}>All About Tendons!</Link>
+              <Link href={"/about"}>All About Tendons!</Link>
             </li>
             <li>
-              <Link href={""}>Recovery</Link>
-              <ul className="p-2">
-                <li>
-                  <Link href={""}>Time</Link>
-                </li>
-                <li>
-                  <Link href={""}>Supplementation</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href={""}>Relevant Research</Link>
+              <Link href={"/recovery"}>Recovery Time</Link>
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost text-2xl" href={""}>
+        <Link className="btn btn-ghost text-2xl" href={"/"}>
           <GiHealing />
           ReturnToPlay
         </Link>
@@ -54,20 +48,24 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-lg">
           <li>
-            <Link href={""}>All About Tendons!</Link>
+            <Link href={"/about/"}>All About Tendons!</Link>
           </li>
           <li>
-            <Link href={""}>Recovery Time</Link>
-          </li>
-          <li>
-            <Link href={""}>Lifestyle Factors</Link>
+            <Link href={"/recovery"}>Recovery Time</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn" href={""}>
-          Sign In
-        </Link>
+        {status === "authenticated" && (
+          <Link className="btn" href={"/api/auth/signout"}>
+            Log Out
+          </Link>
+        )}
+        {status === "unauthenticated" && (
+          <Link className="btn" href={"/api/auth/signin"}>
+            Sign In
+          </Link>
+        )}
       </div>
     </div>
   );

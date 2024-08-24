@@ -11,13 +11,20 @@ datasource db {
 }
 
 model User {
-  id            Int            @id @default(autoincrement())
-  name          String
+  id            String         @id @default(cuid())
+  name          String?
+  email         String?        @unique
+  emailVerified DateTime?      @map("email_verified")
+  image         String?
   abilityLevel  AbilityLevel   @default(BEGINNER)
   hamstring     Boolean        @default(false)
   quad          Boolean        @default(false)
   patellar      Boolean        @default(false)
   userExercises UserExercise[]
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map("users")
 }
 
 enum AbilityLevel {
@@ -35,6 +42,7 @@ model BodyPart {
 model Exercise {
   id            Int            @id @default(autoincrement())
   name          String
+  setRepScheme  String?
   description   String?
   abilityLevel  AbilityLevel
   bodyPart      BodyPart       @relation(fields: [bodyPartId], references: [id])
@@ -43,7 +51,7 @@ model Exercise {
 }
 
 model UserExercise {
-  userId     Int
+  userId     String
   exerciseId Int
   completed  Boolean  @default(false)
   timestamp  DateTime @default(now())
@@ -52,4 +60,43 @@ model UserExercise {
   exercise Exercise @relation(fields: [exerciseId], references: [id])
 
   @@id([userId, exerciseId])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
 }
