@@ -1,6 +1,7 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import Link from "next/link";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: { SelectedIds: string };
