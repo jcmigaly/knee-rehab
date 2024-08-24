@@ -35,12 +35,12 @@ const RehabPage = async ({ searchParams: { SelectedIds } }: Props) => {
   return (
     <div className="overflow-x-auto bg-base-200 min-h-screen">
       <div className="rounded-md bg-base-100 m-3">
-        <table className="table table-auto bg-base-0">
+        <table className="table table-auto bg-base-0 whitespace-normal break-all">
           {/* head */}
           <thead>
             <tr>
               <th>Exercise Name</th>
-              <th>Set and Rep Scheme</th>
+              <th>Set/Rep Scheme</th>
               <th>Description</th>
             </tr>
           </thead>
@@ -49,7 +49,9 @@ const RehabPage = async ({ searchParams: { SelectedIds } }: Props) => {
               <tr key={part.name} className="hover">
                 <td>{part.name}</td>
                 <td>{part.setRepScheme}</td>
-                <td>{part.description}</td>
+                <td className="whitespace-normal break-words">
+                  {part.description}
+                </td>
               </tr>
             ))}
           </tbody>

@@ -9,7 +9,9 @@ const RecoveryTime = () => {
       <div className="bg-base-200 min-h-screen pt-6 pb-6 flex flex-col items-center justify-center">
         <div className="hero-content flex-col lg:flex-row-reverse flex-wrap content-around">
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">Tendon Recovery Time</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              Tendon Recovery Time
+            </h1>
             <p className="py-6">
               Tendon remodeling typically takes 8-12 weeks before noticeable
               improvements. To support this process, consistently load the
@@ -49,7 +51,9 @@ const RecoveryTime = () => {
             </form>
           </div>
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">Lifestyle Factors</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              Lifestyle Factors
+            </h1>
             <p className="py-6">
               Ensure you are getting 8-10 hours of sleep each night, engaging in
               light locomotion such as walking for 30 minutes to an hour daily,
@@ -61,7 +65,9 @@ const RecoveryTime = () => {
         </div>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">Collagen Supplementation</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              Collagen Supplementation
+            </h1>
             <p className="py-6">
               To further optimize recivery, consider taking a collagen
               supplement about 45 minutes before training. Research shows that

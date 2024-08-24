@@ -8,7 +8,9 @@ const AllAboutTendons = () => {
       <div className="bg-base-200 min-h-screen pt-6 pb-6 flex flex-col items-center justify-center">
         <div className="hero-content flex-col lg:flex-row-reverse flex-wrap content-around">
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">What are tendons?</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              What are tendons?
+            </h1>
             <p className="py-6">
               Tendons are strong, flexible bands of fibrous connective tissue.
               They serve as the link between muscle and bone, allowing muscles
@@ -47,7 +49,9 @@ const AllAboutTendons = () => {
             </form>
           </div>
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">Anatomy of Tendons</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              Anatomy of Tendons
+            </h1>
             <p className="py-6">
               Tendons are made up of tightly packed bundles of collagen fibers,
               which you can think of as bundles of spaghetti noodles. These
@@ -61,7 +65,9 @@ const AllAboutTendons = () => {
         </div>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-5xl font-bold">Managing Tendon Stress</h1>
+            <h1 className="text-2xl sm:text-5xl font-bold">
+              Managing Tendon Stress
+            </h1>
             <p className="py-6">
               Tendinopathy and tendonitis occur when the stress on a tendon
               exceeds its ability to recover. When this happens, it is crucial
