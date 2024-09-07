@@ -35,7 +35,7 @@ const RehabPage = async ({ searchParams: { SelectedIds } }: Props) => {
   return (
     <div className="overflow-x-auto bg-base-200 min-h-screen">
       <div className="rounded-md bg-base-100 m-3">
-        <table className="table table-auto bg-base-0 whitespace-normal break-all">
+        <table className="table table-auto bg-base-0 whitespace-normal break-words break-all">
           {/* head */}
           <thead>
             <tr>

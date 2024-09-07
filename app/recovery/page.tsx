@@ -69,7 +69,7 @@ const RecoveryTime = () => {
               Collagen Supplementation
             </h1>
             <p className="py-6">
-              To further optimize recivery, consider taking a collagen
+              To further optimize recovery, consider taking a collagen
               supplement about 45 minutes before training. Research shows that
               collagen synthesis occurs during the training session, and having
               collagen in your blood can help incorporate it into the tendon
