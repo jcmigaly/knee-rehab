@@ -2,7 +2,7 @@
 
 ## Overview
 
-Return To Play is a web application designed to assist athletes with personalized knee rehabilitation exercises based on specific tendon injuries. Built with a user-friendly interface, the app helps users select the injured part of their knee—patellar tendon, quad tendon, or hamstring tendon—and generates a custom rehabilitation plan tailored to their needs.
+Return To Play is a web application designed to assist athletes with personalized knee rehabilitation exercises based on specific tendon injuries. Built with a user-friendly interface, the app helps users select the injured part of their knee—patellar tendon, distal quad tendon, or distal hamstring tendon—and generates a custom rehabilitation plan tailored to their needs.
 
 The app was developed with insights from my personal experience as a Division 1 track and field athlete and aims to help fellow athletes recover efficiently.
 
