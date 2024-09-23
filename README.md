@@ -12,12 +12,6 @@ The app was developed with insights from my personal experience as a Division 1 
 - Mobile Responsive: The app adapts seamlessly across various devices, ensuring accessibility on both desktop and mobile.
 - Automated Updates: Deployed via Vercel, the app automatically updates with each GitHub push.
 
-## Tech Stack
-- Next.js: Frontend framework for building server-side rendered React applications.
-- TypeScript: Strongly typed JavaScript for better development experience and type safety.
-- Tailwind CSS: Utility-first CSS framework for responsive and modern UI design.
-- SQL Database: Stores and retrieves exercises based on user input.
-
 ## Usage
 1. On the home page, select the injured tendon(s) from the options: Patellar Tendon, Quad Tendon, or Hamstring Tendon.
 2. Click Generate Rehab Plan to retrieve a personalized set of exercises based on your selections.
