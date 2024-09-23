@@ -56,7 +56,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {status === "authenticated" && (
+        {/* {status === "authenticated" && (
           <Link className="btn" href={"/api/auth/signout"}>
             Log Out
           </Link>
@@ -65,7 +65,7 @@ const NavBar = () => {
           <Link className="btn" href={"/api/auth/signin"}>
             Sign In
           </Link>
-        )}
+        )} */}
       </div>
     </div>
   );
